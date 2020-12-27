@@ -1,25 +1,47 @@
-print('Hi please enter the first number and the second number and then choose the mathematical process(- ,+ ,* ,/)\n')
+import math
+
+print('Hi you can use the following processes (-,/,%,*,cos,sin,tan)\n')
 
 try:
-    num1 = int(input("First number: "))
-    num2 = int(input("Second number: "))
     process = input("Mathematical process: ")
+    if len(process) > 1:
+        num1 = int(input("First number: "))
+    else:
+        num1 = int(input("First number: "))
+        num2 = int(input("Second number: "))
 
+    process2= process.upper()
     if process == '-':
-        sub = num1-num2
-        print(f'{num1} - {num2} = {sub}')
+        totall = num1 - num2
+        print(f'{num1} - {num2} = {totall}')
 
     elif process == '+':
-        sub = num1+num2
-        print(f'{num1} + {num2} = {sub}')
+        totall = num1 + num2
+        print(f'{num1} + {num2} = {totall}')
 
     elif process == '/':
-        sub = num1/num2
-        print(f'{num1} / {num2} = {sub}')
+        totall = num1 / num2
+        print(f'{num1} / {num2} = {totall}')
 
     elif process == '*':
-        sub = num1*num2
-        print(f'{num1} * {num2} = {sub}')
+        totall = num1 * num2
+        print(f'{num1} * {num2} = {totall}')
+
+    elif process == '%':
+        totall = num1 % num2
+        print(f'{num1} % {num2} = {totall}')
+
+    elif process2 == 'COS':
+        totall = math.cos(num1)
+        print(f'Cos({num1}) = {totall}')
+
+    elif process2 == 'SIN':
+        totall = math.sin(num1)
+        print(f'Sin({num1}) = {totall}')
+
+    elif process2 == 'TAN':
+        totall = math.tan(num1)
+        print(f'Tan({num1}) = {totall}')
 
     else:
         print('Please use the following (- ,+ ,* ,/)')
