@@ -1,53 +1,21 @@
-import math
+import list
+print('\n---Write (show) to show the available options---')
 
-print('Hi you can use the following processes (-,/,%,*,cos,sin,tan)\n')
+enter = ''
+while enter != 'QUIT':
+    select = input('>> ')
+    select2 = select.upper()
 
-try:
-    process = input("Mathematical process: ")
-    if len(process) > 1:
-        num1 = int(input("First number: "))
-    else:
-        num1 = int(input("First number: "))
-        num2 = int(input("Second number: "))
+    if select2 == 'SHOW':
+        print(''' 
+            O = To show the available mathematical operations
+            Q = To quit   
+            ''')
 
-    process2= process.upper()
-    if process == '-':
-        totall = num1 - num2
-        print(f'{num1} - {num2} = {totall}')
+    elif select2 == 'O':
+        print('you can use the following operators (cos , sin , tan , + , - , * , /)')
+        list2 = list.options()
+    elif select2 == 'Q':
+        print('Thank you')
+        break
 
-    elif process == '+':
-        totall = num1 + num2
-        print(f'{num1} + {num2} = {totall}')
-
-    elif process == '/':
-        totall = num1 / num2
-        print(f'{num1} / {num2} = {totall}')
-
-    elif process == '*':
-        totall = num1 * num2
-        print(f'{num1} * {num2} = {totall}')
-
-    elif process == '%':
-        totall = num1 % num2
-        print(f'{num1} % {num2} = {totall}')
-
-    elif process2 == 'COS':
-        totall = math.cos(num1)
-        print(f'Cos({num1}) = {totall}')
-
-    elif process2 == 'SIN':
-        totall = math.sin(num1)
-        print(f'Sin({num1}) = {totall}')
-
-    elif process2 == 'TAN':
-        totall = math.tan(num1)
-        print(f'Tan({num1}) = {totall}')
-
-    else:
-        print('Please use the following (- ,+ ,* ,/)')
-
-except ZeroDivisionError:
-    print('You can not divide the number by zero')
-
-except ValueError:
-    print('Please enter a number')
